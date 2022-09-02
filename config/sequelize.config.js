@@ -1,6 +1,6 @@
 import Sequelize from "sequelize";
 const sequelize = new Sequelize(
-    'crud_db',
+    'crm_db',
     'postgres',
     'postgres',
     {
