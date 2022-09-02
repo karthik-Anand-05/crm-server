@@ -1,19 +1,19 @@
 import { DataTypes } from 'sequelize';
-import sequelize from '../config/sequelize.config.js';
+import sequelize from '../config/db.config.js';
 
-const Users = sequelize.define('Users', {
-    username: {
-        type: DataTypes.STRING,
+const Users = sequelize.define('users', {
+    id: {
+        primaryKey: true,
+        type: DataTypes.UUID,
         allowNull: false,
-
+        unique: true,
+        defaultValue: DataTypes.UUIDV4
     },
-    email: {
+    username: {
         type: DataTypes.TEXT,
-        isUnique: true,
         allowNull: false,
-        validate: {
-            isEmail: true
-        }
+        unique: true
+
     },
     password: {
         type: DataTypes.STRING,
@@ -23,10 +23,7 @@ const Users = sequelize.define('Users', {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    profileImage: {
-        type: DataTypes.STRING,
-        allowNull: false,
-    }
-})
-await Users.sync();
+},
+    { updatedAt: false }
+)
 export default Users;
