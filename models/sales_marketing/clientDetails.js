@@ -1,29 +1,42 @@
-// import { DataTypes } from 'sequelize';
-// import sequelize from '../config/db.config.js';
+import { DataTypes } from 'sequelize';
+import sequelize from '../../config/db.config.js';
 
-// const Users = sequelize.define('users', {
-//     id: {
-//         type: DataTypes.UUID,
-//         allowNull: false,
-//         unique: true,
-//         defaultValue: DataTypes.UUIDV4
-//     },
-//     username: {
-//         type: DataTypes.TEXT,
-//         allowNull: false,
-//         unique: true
+const clientDetails = sequelize.define('clientDetails', {
+    client_id: {
+        primaryKey: true,
+        type: DataTypes.UUID,
+        allowNull: false,
+        unique: true,
+        defaultValue: DataTypes.UUIDV4
+    },
+    company_name: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    email_id: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    contact_no: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    country: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    state: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    requirement_details: {
+        type: DataTypes.TEXT,
+        allowNull: false
+    },
+    company_address: {
+        type: DataTypes.STRING,
+        allowNull: false
+    }
+}, { updatedAt: false })
 
-//     },
-//     password: {
-//         type: DataTypes.STRING,
-//         allowNull: false,
-//     },
-//     role: {
-//         type: DataTypes.STRING,
-//         allowNull: false,
-//     },
-// },
-//     { updatedAt: false }
-// )
-// await sequelize.sync({ alter: { drop: true } });
-// export default Users;
+export default clientDetails;

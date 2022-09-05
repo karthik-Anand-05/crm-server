@@ -40,6 +40,10 @@ export const signUpAuth = async (req, res) => {
     }
 }
 
+
+
+
+// Ref
 export const changePassword = async (req, res) => {
     const { id } = req.params;
     const { password } = req.body;
