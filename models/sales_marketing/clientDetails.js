@@ -1,23 +1,23 @@
-import { DataTypes } from 'sequelize';
+import DataTypes from 'sequelize';
 import sequelize from '../../config/db.config.js';
 
-const clientDetails = sequelize.define('clientDetails', {
-    client_id: {
+const clientDetailModel = sequelize.define('clientDetails', {
+    clientId: {
         primaryKey: true,
         type: DataTypes.UUID,
         allowNull: false,
         unique: true,
         defaultValue: DataTypes.UUIDV4
     },
-    company_name: {
+    companyName: {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    email_id: {
+    emailId: {
         type: DataTypes.STRING,
         allowNull: false
     },
-    contact_no: {
+    contactNo: {
         type: DataTypes.STRING,
         allowNull: false
     },
@@ -29,14 +29,17 @@ const clientDetails = sequelize.define('clientDetails', {
         type: DataTypes.STRING,
         allowNull: false
     },
-    requirement_details: {
+    requirementDetails: {
         type: DataTypes.TEXT,
         allowNull: false
     },
-    company_address: {
+    companyAddress: {
         type: DataTypes.STRING,
         allowNull: false
     }
-}, { updatedAt: false })
+}, { timestamps: false })
 
-export default clientDetails;
+export default clientDetailModel;
+
+
+// h

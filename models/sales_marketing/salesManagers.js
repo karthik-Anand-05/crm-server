@@ -1,7 +1,7 @@
 import DataTypes from 'sequelize'
 import sequelize from '../../config/db.config.js';
 
-const salesPersonModel = sequelize.define('salesPersons', {
+const salesManagerModel = sequelize.define('salesManagers', {
     employeeId: {
         primaryKey: true,
         type: DataTypes.UUID,
@@ -21,7 +21,7 @@ const salesPersonModel = sequelize.define('salesPersons', {
         type: DataTypes.DATEONLY,
         allowNull: false
     },
-    emailId: {
+    email: {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
@@ -43,10 +43,6 @@ const salesPersonModel = sequelize.define('salesPersons', {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    reporting_manager: {
-        type: DataTypes.STRING,
-        allowNull: false
-    }
-}, { timestamps: false, underscored: true })
+}, { timestamps: false })
 
-export default salesPersonModel;
+export default salesManagerModel;

@@ -1,14 +1,13 @@
-import { DataTypes } from 'sequelize';
-import sequelize from '../config/db.config.js';
+import DataTypes from 'sequelize';
+import sequelize from '../../config/db.config.js';
 
-const users = sequelize.define('users', {
-    id: {
+const loginModel = sequelize.define('login', {
+    user_id: {
         primaryKey: true,
         type: DataTypes.UUID,
         allowNull: false,
         unique: true,
         defaultValue: DataTypes.UUIDV4,
-        autoIncrement: true
     },
     username: {
         type: DataTypes.TEXT,
@@ -25,12 +24,17 @@ const users = sequelize.define('users', {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    role: {
+    role_id: {
         type: DataTypes.STRING,
         allowNull: false,
     },
 },
-    { updatedAt: false }
+    {
+        freezeTableName: true,
+        timestamps: false,
+        underscored: true
+    }
 )
 
-export default users;
+
+export default loginModel;

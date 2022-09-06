@@ -1,27 +1,26 @@
-import { DataTypes } from "sequelize";
+import DataTypes from "sequelize";
 import sequelize from '../../config/db.config.js';
-import clientDetails from "./clientDetails.js";
-const projectDetails = sequelize.define('projectDetails', {
-    project_id: {
+const projectDetailModel = sequelize.define('projectDetails', {
+    projectId: {
         primaryKey: true,
         type: DataTypes.UUID,
         allowNull: false,
         unique: true,
         defaultValue: DataTypes.UUIDV4
     },
-    project_type: {
+    projectType: {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    project_requirements: {
+    projectRequirements: {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    project_description: {
+    projectDescription: {
         type: DataTypes.TEXT,
         allowNull: false
     },
-    project_budget: {
+    projectBudget: {
         type: DataTypes.DECIMAL(12, 2),
         allowNull: false,
     },
@@ -29,12 +28,11 @@ const projectDetails = sequelize.define('projectDetails', {
         type: DataTypes.DATEONLY,
         allowNull: false,
     }
-})
-projectDetails.belongsTo(clientDetails, {
-    foreignKey: {
-        name: 'client_id',
-        type: DataTypes.UUID
-    }
+}, {
+    timestamps: false,
+    underscored: true
 })
 
-export default projectDetails;
+
+
+export default projectDetailModel;
