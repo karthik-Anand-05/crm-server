@@ -36,3 +36,5 @@ projectDetails.belongsTo(clientDetails, {
         type: DataTypes.UUID
     }
 })
+
+export default projectDetails;
