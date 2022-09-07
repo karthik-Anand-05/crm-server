@@ -25,8 +25,10 @@ const loginModel = sequelize.define('login', {
         allowNull: false,
     },
     role_id: {
-        type: DataTypes.STRING,
+        type: DataTypes.UUID,
         allowNull: false,
+        unique: true,
+        defaultValue: DataTypes.UUIDV4,
     },
 },
     {

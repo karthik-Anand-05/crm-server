@@ -1,6 +1,6 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-import userRoutes from './routes/users.js';
+import loginRoutes from './routes/login.js';
 import dotenv from 'dotenv';
 import sequelize from './config/db.config.js';
 dotenv.config();
@@ -20,7 +20,7 @@ try {
     console.error('Unable to connect to the database:', error);
 }
 await sequelize.sync({ alter: { drop: false } });
-app.use('/users', userRoutes)
+app.use('/users', loginRoutes)
 app.listen(PORT, (err) => {
     if (err) throw err;
     console.log(`Server running on ${PORT}`);

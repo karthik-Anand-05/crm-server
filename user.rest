@@ -2,11 +2,7 @@ POST http://localhost:5000/user/signup
 Content-Type: application/json
 
 {
-    "firstname":"red",
-    "lastname":"arrow",
-    "email":"redarrow@gmail.com",
-    "password":"password12345",
-    "role":"HR"
+    
 }
 
 ###
