@@ -23,7 +23,7 @@ export const signInAuth = async (req, res) => {
         };
         const accessToken = generateAccessToken(userdata);
         const refreshToken = generateRefreshToken(userdata);
-        refreshTokens.push(refreshToken)
+        refreshTokens.push(refreshToken);
         res.status(200).json({ accessToken, refreshToken });
     } catch (error) {
         res.status(401).json({ message: "Something went wrong" });
@@ -67,7 +67,7 @@ export const tokenAuth = async (req, res) => {
         jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET, (err, decoded) => {
             if (err) return res.sendStatus(403)
             const accessToken = generateAccessToken({ username: decoded?.username })
-            
+
             res.json({ accessToken: accessToken })
         })
     } catch (err) {
