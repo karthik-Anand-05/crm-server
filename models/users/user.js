@@ -1,7 +1,7 @@
 import DataTypes from 'sequelize';
 import sequelize from '../../config/db.config.js';
 
-const loginModel = sequelize.define('login', {
+const user = sequelize.define('login', {
     user_id: {
         primaryKey: true,
         type: DataTypes.UUID,
@@ -24,12 +24,10 @@ const loginModel = sequelize.define('login', {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    role_id: {
-        type: DataTypes.UUID,
-        allowNull: false,
-        unique: true,
-        defaultValue: DataTypes.UUIDV4,
-    },
+    isAdmin: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: false
+    }
 },
     {
         freezeTableName: true,
@@ -38,5 +36,4 @@ const loginModel = sequelize.define('login', {
     }
 )
 
-
-export default loginModel;
+export default user;

@@ -3,10 +3,10 @@ import sequelize from '../../config/db.config.js';
 const projectDetailModel = sequelize.define('projectDetails', {
     projectId: {
         primaryKey: true,
-        type: DataTypes.UUID,
+        type: DataTypes.INTEGER,
         allowNull: false,
         unique: true,
-        defaultValue: DataTypes.UUIDV4
+
     },
     projectType: {
         type: DataTypes.STRING,
