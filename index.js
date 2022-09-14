@@ -25,7 +25,7 @@ try {
 }
 await sequelize.sync({ alter: { drop: false } });
 
-app.use('/users', userRoutes)
+app.use('/users', userRoutes);
 
 app.listen(PORT, (err) => {
     if (err) throw err;

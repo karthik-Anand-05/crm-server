@@ -22,5 +22,5 @@ POST http://localhost:5000/users/token
 Content-Type: application/json
 
 {
-    "refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIxMjMiLCJ1c2VyX2lkIjoiMTM2MTZmOWUtN2ZmMi00M2RkLWJkOTktMGM4OTBhNmQ5ZjczIiwiaWF0IjoxNjYyNjQ0MjgzfQ.Bo_4fOjLL6xVuj3Uty4CdCMLt_bkRNaiyZY87BCc1F0"
+    "token":"<refreshtoken generated from login>"
 }

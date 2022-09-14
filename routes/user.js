@@ -1,6 +1,6 @@
 import express from 'express';
 const router = express.Router();
-import { signUpAuth, signInAuth, tokenAuth } from '../controllers/auth.js';
+import { signUpAuth, signInAuth, tokenAuth } from '../controllers/auth_controller.js';
 
 
 router.post('/signin', signInAuth);
